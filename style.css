@@ -1,0 +1,190 @@
+:root{
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 20px;
+    --sidebar-color: white;
+    --sidebar-margin: 40px;
+    --icon-margin-left: -1.1rem;
+    --icon-size: 1.2rem;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+}
+
+body{
+    min-height: 100vh;
+    background-color: red;
+    display: grid;
+    grid-template-columns: minmax(250px, 0.9fr) 4fr;
+}
+
+.sidebar{
+    background-color: blue;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+}
+
+.content{
+    background-color: aqua;
+    display: grid;
+    grid-template-rows: 2fr 8fr;
+}
+
+.topbar{
+    background-color: white;
+}
+
+.main-content{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: minmax(700px, 7fr) minmax(300px, 3fr);
+}
+
+.left-content{
+    background-color: lightgray;
+}
+
+.logo{
+    font-size: 1.5rem;
+    color: var(--sidebar-color);
+    background-color: rgb(151, 98, 29);
+    display: block;
+    list-style-type: decimal;
+    padding-block-start: 1em;
+    padding-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: var(--sidebar-margin);
+}
+
+.main-options{
+    background-color: rgb(59, 67, 175);
+    display: grid;
+    grid-template-rows: 350px minmax(350px,4fr) 1fr;
+}
+
+
+ol,ul{
+    display: grid;
+    grid-template-rows: repeat(6,50px);
+    align-items: center;
+    margin-bottom: 0px;
+    padding-inline-start: var(--sidebar-margin);
+}
+
+li, a{
+    color: var(--sidebar-color);
+    text-decoration: none;
+    list-style: none;
+    position: relative;
+}
+
+.home::before{
+    content: url(./icons/home.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.profile::before{
+    content: url(./icons/card-account-details-outline.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.message::before{
+    content: url(./icons/message-reply.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.history::before{
+    content: url(./icons/clock-time-three.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.task::before{
+    content: url(./icons/file-multiple.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.communities::before{
+    content: url(./icons/account-group.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.settings::before{
+    content: url(./icons/cog.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.support::before{
+    content: url(./icons/help-box.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.privacy::before{
+    content: url(./icons/shield-check.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: var(--icon-size);
+    vertical-align: middle;
+    margin-right: calc(var(--icon-margin-left)*-1);
+}
+
+.logo::before{
+    content: url(./icons/view-dashboard.svg);
+    display: inline-block;
+    position: relative;
+    filter: invert();
+    width: calc(var(--icon-size)*2);
+    vertical-align: middle;
+    margin-right: calc((var(--icon-margin-left)*-1)/2);
+    margin-left: calc(var(--icon-margin-left)/2);
+}
+
