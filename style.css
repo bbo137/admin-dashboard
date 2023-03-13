@@ -8,10 +8,10 @@
   --icon-size: 1.2rem;
   --searchbar-size: 1.5rem;
   --content-margin: 50px;
-  --sidebar-color: #3b82f6;
+  --sidebar-color: #1e82be;
   --sidebar-font-color: white;
   --main-content-color: #e2e8f0;
-  --font-color: gray;
+  --font-color: #52525b;
   --card-background-color: white;
 }
 
@@ -19,13 +19,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  max-height: 1180px;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  max-height: 1200px;
 }
 
 body {
@@ -38,18 +38,18 @@ body {
   background-color: var(--sidebar-color);
   display: grid;
   grid-template-rows: 1fr 9fr;
-  max-height: 1180px;
   z-index: 11;
 }
 
 .content {
   display: grid;
-  grid-template-rows: 2fr 8fr;
+  grid-template-rows: 1.6fr 8fr;
 }
 
 .topbar {
+  padding-top: 12px;
   display: grid;
-  grid-template: 1fr 150px / 600px 1fr 600px;
+  grid-template: 1fr 130px / 600px 1fr 600px;
   grid-template-areas:
     "search-container search-container current-user"
     "user-info . button-container";
@@ -110,9 +110,25 @@ span.search-icon::before {
   width: var(--searchbar-size);
 }
 
+span.search-icon:hover {
+  transition: 0.05s;
+  border-radius: 50%;
+  transform: scale(0.8);
+}
+
+span.search-icon:active {
+  transform: translateX(0.5px);
+  transform: scale(0.6);
+}
+
 .search-bar:focus,
 .search-bar:hover {
   outline: none;
+}
+
+.search-bar:focus,
+.search-bar:active {
+  outline: 2px solid #666;
 }
 
 .current-user {
@@ -151,12 +167,12 @@ span.search-icon::before {
 }
 
 button:hover {
-  background-color: rgb(30, 140, 190);
+  background-color: rgb(30, 139, 190);
   box-shadow: 1px 2px #666;
 }
 
 button:active {
-  background-color: rgb(30, 180, 190);
+  background-color: rgb(31, 181, 191);
   box-shadow: 1px 2px #666;
   transform: translateX(-1px);
   transform: translateY(2px);
@@ -167,12 +183,26 @@ button:active {
   background-image: url(./icons/bell-ring-outline.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
   height: 50px;
   width: 50px;
+  background-size: 100%;
   transform: scale(0.6);
   display: flex;
   margin: auto;
   margin-right: 0;
+}
+
+.notif-icon:hover {
+  transition: 0.05s;
+  border-radius: 50%;
+  background-size: 85%;
+}
+
+.notif-icon:active {
+
+  transform: translateX(0.5px);
+  background-size: 40%;
 }
 
 .profile-icon {
@@ -226,10 +256,70 @@ button:active {
   background-color: var(--card-background-color);
   color: var(--font-color);
   font-weight: 100;
-  height: 222px;
   font-family: "helvetica";
+  height: 222px;
   border-radius: 8px;
   padding: 20px;
+  display: grid;
+  grid-template-rows: 0.8fr 3fr;
+}
+
+div.card-container>.card>b {
+  align-self: start;
+  display: inline-block;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  padding: 0;
+}
+
+div.card-container>.card>span {
+  display: inline-block;
+  grid-row: 2/3;
+  grid-column: 1/2;
+}
+
+.icon-container {
+  grid-row: 4/4;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 25px;
+  margin-right: 20px;
+  gap: 25px;
+}
+
+.icon-container>span:first-child,
+.icon-container>span:nth-child(2),
+.icon-container>span:last-child {
+  height: 25px;
+  width: 25px;
+  border-radius: 60%;
+  content: " ";
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-container>span:first-child {
+  background-image: url(icons/source-fork.svg);
+}
+
+.icon-container>span:nth-child(2) {
+  background-image: url(icons/star-plus-outline.svg);
+}
+
+.icon-container>span:last-child {
+  background-image: url(icons/eye-plus-outline.svg);
+}
+
+.icon-container>span:hover {
+  transition: 0.1s;
+  border-radius: 50%;
+  transform: scale(1.35);
+  background-size: 85%;
+}
+
+.icon-container>span:active {
+  transform: scale(1.2);
+  transform: translateY(4px);
 }
 
 .right-side-container {
@@ -251,7 +341,7 @@ button:active {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr;
-  gap: 20px 10px;
+  gap: 20px 0px;
 }
 
 hr {
@@ -264,9 +354,9 @@ ol,
 ul {
   display: grid;
   grid-template-rows: repeat(6, 50px);
-  align-items: center;
+  align-items: stretch;
   margin-bottom: 0px;
-  padding-inline-start: var(--sidebar-margin);
+  padding-left: 0px;
 }
 
 li,
@@ -274,7 +364,21 @@ a {
   color: var(--sidebar-font-color);
   text-decoration: none;
   list-style: none;
+  display: flex;
   position: relative;
+  align-items: center;
+
+  padding-inline-start: var(--sidebar-margin);
+}
+
+li:hover {
+  backdrop-filter: brightness(1.3);
+  font-size: 110%;
+}
+
+li:active {
+  transition: 0.1s;
+  transform: translateY(2px);
 }
 
 .home::before {
@@ -387,7 +491,7 @@ div.trending>span:nth-child(1) {
   background-size: 90%;
   height: 40px;
   width: 40px;
-  background-color: gold;
+  background-color: cornflowerblue;
   border-radius: 50%;
 }
 
@@ -413,7 +517,7 @@ div.trending>span:nth-child(5) {
   background-size: 55%;
   height: 40px;
   width: 40px;
-  background-color: #666;
+  background-color: #6666;
   border-radius: 50%;
 }
 
@@ -426,7 +530,7 @@ div.trending>span:nth-child(7) {
   background-size: 55%;
   height: 40px;
   width: 40px;
-  background-color: #666;
+  background-color: pink;
   border-radius: 50%;
 }
 
@@ -435,6 +539,12 @@ span.icon:nth-child(1)::before {
   display: inline-block;
   vertical-align: middle;
   margin: auto 0px;
+  padding: 3px 10px;
+}
+
+.icon:hover+.user,
+.trending>.user:hover {
+  backdrop-filter: brightness(0.95);
 }
 
 .topbar,
@@ -450,4 +560,21 @@ div.right-side-container {
 b {
   color: black;
   font-weight: bold;
+}
+
+.card,
+.right-side-container {
+  box-shadow: 2px 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.card>b::before {
+  border-radius: 20px 0% 0% 20px;
+  content: " ";
+  display: grid;
+  position: absolute;
+  height: 222px;
+  width: 7px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: #f59e0b;
 }

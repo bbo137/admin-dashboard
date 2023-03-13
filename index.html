@@ -1,87 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <div class="sidebar">
-      <div class="logo">Dashboard</div>
-      <div class="main-options">
-        <ul>
-          <li class="sidebar-txt home"><a href="">Home</a></li>
-          <li class="sidebar-txt profile"><a href="">Profile</a></li>
-          <li class="sidebar-txt message"><a href="">Message</a></li>
-          <li class="sidebar-txt history"><a href="">History</a></li>
-          <li class="sidebar-txt task"><a href="">Task</a></li>
-          <li class="sidebar-txt communities"><a href="">Communities</a></li>
-        </ul>
-        <ol>
-          <li class="sidebar-txt settings"><a href="">Settings</a></li>
-          <li class="sidebar-txt support"><a href="">Support</a></li>
-          <li class="sidebar-txt privacy"><a href="">Privacy</a></li>
-        </ol>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo">Dashboard</div>
+    <div class="main-options">
+      <ul>
+        <li class="sidebar-txt home"><a href="">Home</a></li>
+        <li class="sidebar-txt profile"><a href="">Profile</a></li>
+        <li class="sidebar-txt message"><a href="">Message</a></li>
+        <li class="sidebar-txt history"><a href="">History</a></li>
+        <li class="sidebar-txt task"><a href="">Task</a></li>
+        <li class="sidebar-txt communities"><a href="">Communities</a></li>
+      </ul>
+      <ol>
+        <li class="sidebar-txt settings"><a href="">Settings</a></li>
+        <li class="sidebar-txt support"><a href="">Support</a></li>
+        <li class="sidebar-txt privacy"><a href="">Privacy</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="content">
+    <div class="topbar">
+      <div class="search-container">
+        <span class="search-icon"></span>
+        <input class="search-bar"></input>
+      </div>
+      <div class="current-user">
+        <div class="notif-icon"></div>
+        <div class="profile-icon"></div>
+        <div class="username">Morgan Oakley</div>
+      </div>
+      <div class="user-info">
+        <div class="profile-icon"></div>
+        <div class="user"><span class="small-text"> <Strong>Hi there,</span><br>Morgan Oakley (@morgan)</Strong></div>
+      </div>
+      <div class="button-container">
+        <button class="button">New</button>
+        <button class="button">Upload</button>
+        <button class="button">Share</button>
       </div>
     </div>
-    <div class="content">
-      <div class="topbar">
-        <div class="search-container">
-          <span class="search-icon"></span>
-          <input class="search-bar"></input>
-        </div>
-        <div class="current-user">
-          <div class="notif-icon"></div>
-          <div class="profile-icon"></div>
-          <div class="username">Morgan Oakley</div>
-        </div>
-        <div class="user-info">
-          <div class="profile-icon"></div>
-          <div class="user"><span class="small-text"> <Strong>Hi there,</span><br>Morgan Oakley (@morgan)</Strong></div>
-        </div>
-        <div class="button-container">
-          <button class="button">New</button>
-          <button class="button">Upload</button>
-          <button class="button">Share</button>
+    <div class="main-content">
+      <div class="left-content">
+        <h3>Your Projects</h3>
+        <div class="card-container">
+          <div class="card"><b>Super Cool Project</b><br><span class="small-text">Ut accusam amet dolor labore sea sed
+              lorem stet, sed tempor eos nonumy no sit.</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
+          <div class="card"><b>Less Cool Project</b><br><span class="small-text">Eos et stet labore sea elitr duo
+              accusam, sea ut accusam ut ut labore diam tempor. Gubergren accusam sadipscing accusam ea diam sit
+              aliquyam lorem ut,.</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
+          <div class="card"><b>Imposible App</b><br><span class="small-text">Diam dolore ea erat duo dolor dolores sit,
+              voluptua labore amet amet lorem takimata.</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
+          <div class="card"><b>Easy Peasy App</b><br><span class="small-text">Et duo tempor sit amet vero. Est ea et
+              amet eos, labore gubergren ipsum accusam rebum rebum ipsum. Ipsum et sed accusam.</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
+          <div class="card"><b>Ad Blocker</b><br><span class="small-text">Dolor et amet et est nonumy ut no, elitr
+              aliquyam tempor magna ut, takimata invidunt lorem justo amet.</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
+          <div class="card"><b>Monkey Maker</b><br><span class="small-text">Kasd ipsum dolor et ea tempor. Sed
+              sadipscing nonumy ea lorem, et invidunt et tempor ut dolore stet. Erat sit lorem et et..</span>
+            <div class="icon-container"><span></span><span></span><span></span></div>
+          </div>
         </div>
       </div>
-      <div class="main-content">
-        <div class="left-content">
-          <h3>Your Projects</h3>
-          <div class="card-container">
-            <div class="card"><b>Super Cool Project</b><br><span class="small-text">Ut accusam amet dolor labore sea sed lorem stet, sed tempor eos nonumy no sit.</span></div>
-            <div class="card"><b>Less Cool Project</b><br><span class="small-text">Eos et stet labore sea elitr duo accusam, sea ut accusam ut ut labore diam tempor. Gubergren accusam sadipscing accusam ea diam sit aliquyam lorem ut,.</span></div>
-            <div class="card"><b>Imposible App</b><br><span class="small-text">Diam dolore ea erat duo dolor dolores sit, voluptua labore amet amet lorem takimata.</span></div>
-            <div class="card"><b>Easy Peasy App</b><br><span class="small-text">Et duo tempor sit amet vero. Est ea et amet eos, labore gubergren ipsum accusam rebum rebum ipsum. Ipsum et sed accusam.</span></div>
-            <div class="card"><b>Ad Blocker</b><br><span class="small-text">Dolor et amet et est nonumy ut no, elitr aliquyam tempor magna ut, takimata invidunt lorem justo amet.</span></div>
-            <div class="card"><b>Monkey Maker</b><br><span class="small-text">Kasd ipsum dolor et ea tempor. Sed sadipscing nonumy ea lorem, et invidunt et tempor ut dolore stet. Erat sit lorem et et..</span></div>
-          </div>
+      <div class="right-content">
+        <h3>Announcements</h3>
+        <div class="right-side-container">
+          <b>Site Maintenance</b><br><span class="small-text">No takimata erat et lorem et nonumy sadipscing no. Ea
+            dolor sadipscing ut.</span>
+          <hr>
+          <b>Community Share Day</b><br><span class="small-text">Nonumy eos ea justo invidunt eirmod vero, voluptua
+            dolor sea amet et.</span>
+          <hr>
+          <b>Update Privacy Policy</b><br><span class="small-text">Lorem duo sea diam invidunt takimata diam sit sed.
+            Vero diam invidunt gubergren justo accusam, et.</span>
         </div>
-        <div class="right-content">
-          <h3>Announcements</h3>
-          <div class="right-side-container">
-            <b>Site Maintenance</b><br><span class="small-text">No takimata erat et lorem et nonumy sadipscing no. Ea dolor sadipscing ut.</span>
-            <hr>
-            <b>Community Share Day</b><br><span class="small-text">Nonumy eos ea justo invidunt eirmod vero, voluptua dolor sea amet et.</span>
-            <hr>
-            <b>Update Privacy Policy</b><br><span class="small-text">Lorem duo sea diam invidunt takimata diam sit sed. Vero diam invidunt gubergren justo accusam, et.</span>
-          </div>
-          <h3>Trending</h3>
-          <div class="right-side-container trending">
-              <span class="icon"></span>
-              <div class="user"><b>@tegan</b><br>World Peace Builder</div>
-              <span class="icon"></span>
-              <div class="user"><b>@morg</b><br>Super Cool Project</div>
-              <span class="icon"></span>
-              <div class="user"><b>@kendall</b><br>Life Changin App</div>
-              <span class="icon"></span>
-              <div class="user"><b>@alex</b><br>No Traffic Maker</div>
-          </div>
+        <h3>Trending</h3>
+        <div class="right-side-container trending">
+          <span class="icon"></span>
+          <div class="user"><b>@tegan</b><br>World Peace Builder</div>
+          <span class="icon"></span>
+          <div class="user"><b>@morg</b><br>Super Cool Project</div>
+          <span class="icon"></span>
+          <div class="user"><b>@kendall</b><br>Life Changin App</div>
+          <span class="icon"></span>
+          <div class="user"><b>@alex</b><br>No Traffic Maker</div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
