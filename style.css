@@ -360,6 +360,10 @@ ul {
   padding-left: 0px;
 }
 
+li{
+  padding-inline-start: var(--sidebar-margin);
+}
+
 li,
 a {
   color: var(--sidebar-font-color);
@@ -368,8 +372,6 @@ a {
   display: flex;
   position: relative;
   align-items: center;
-
-  padding-inline-start: var(--sidebar-margin);
 }
 
 li:hover {
