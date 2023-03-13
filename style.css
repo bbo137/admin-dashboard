@@ -7,6 +7,12 @@
   --icon-margin-left: -1.1rem;
   --icon-size: 1.2rem;
   --searchbar-size: 1.5rem;
+  --content-margin: 50px;
+  --sidebar-color: #3b82f6;
+  --sidebar-font-color: white;
+  --main-content-color: #e2e8f0;
+  --font-color: gray;
+  --card-background-color: white;
 }
 
 html,
@@ -24,49 +30,42 @@ body {
 
 body {
   min-height: 100vh;
-  background-color: red;
   display: grid;
   grid-template-columns: 350px 1fr;
 }
 
 .sidebar {
-  background-color: blue;
+  background-color: var(--sidebar-color);
   display: grid;
   grid-template-rows: 1fr 9fr;
   max-height: 1180px;
+  z-index: 11;
 }
 
 .content {
-  background-color: aqua;
   display: grid;
   grid-template-rows: 2fr 8fr;
 }
 
 .topbar {
-  background-color: purple;
   display: grid;
   grid-template: 1fr 150px / 600px 1fr 600px;
   grid-template-areas:
     "search-container search-container current-user"
-    "user-info . button-container"; 
-    box-shadow:  0px 12px 6px -10px rgba(0,0,0,0.7);
-    z-index: 10;
+    "user-info . button-container";
+  box-shadow: 0px -8px 30px -10px rgba(0, 0, 0, 0.7);
+  z-index: 10;
 }
 
 .main-content {
-  background-color: gray;
+  background-color: var(--main-content-color);
   display: grid;
   grid-template-columns: minmax(700px, 7fr) 400px;
 }
 
-.left-content {
-  background-color: lightgray;
-}
-
 .logo {
   font-size: 1.5rem;
-  color: var(--sidebar-color);
-  background-color: rgb(151, 98, 29);
+  color: var(--sidebar-font-color);
   display: block;
   list-style-type: decimal;
   padding-block-start: 1em;
@@ -77,7 +76,6 @@ body {
 }
 
 .main-options {
-  background-color: rgb(59, 67, 175);
   display: grid;
   grid-template-rows: 350px minmax(350px, 4fr) 1fr;
 }
@@ -86,7 +84,6 @@ body {
   grid-area: search-container;
   display: flex;
   position: relative;
-  background-color: blueviolet;
   align-items: center;
   justify-content: left;
 }
@@ -94,7 +91,7 @@ body {
 .search-bar {
   width: 80%;
   height: var(--searchbar-size);
-  background-color: white;
+  background-color: var(--main-content-color);
   margin-left: 20px;
   margin-right: 40px;
   border-radius: 1rem;
@@ -111,7 +108,6 @@ span.search-icon::before {
   position: relative;
   height: var(--searchbar-size);
   width: var(--searchbar-size);
-  background-color: beige;
 }
 
 .search-bar:focus,
@@ -122,56 +118,52 @@ span.search-icon::before {
 .current-user {
   grid-area: current-user;
   display: grid;
-  background-color: burlywood;
   grid-template-columns: 2fr 1fr 1fr 2.8fr 0.5fr;
   grid-template-areas: ". notification user-icon username .";
 }
 
 .user-info {
   grid-area: user-info;
-  background-color: blanchedalmond;
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-areas: 'user-icon username';
+  grid-template-areas: "user-icon username";
+  margin-left: -25px;
 }
 
 .button-container {
   grid-area: button-container;
-  background-color: red;
   display: flex;
   gap: 16px;
   justify-content: flex-end;
   padding-right: 80px;
 }
 
-.button{
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    background-color: rgb(30, 130, 190);
-    border: none;
-    height: 2rem;
-    width: 4.8rem;
-    border-radius: 4ch;
-    align-self: center;
+.button {
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: rgb(30, 130, 190);
+  border: none;
+  height: 2rem;
+  width: 4.8rem;
+  border-radius: 4ch;
+  align-self: center;
 }
 
-button:hover{
-    background-color: rgb(30, 140, 190);
-    box-shadow: 1px 2px #666;
-
+button:hover {
+  background-color: rgb(30, 140, 190);
+  box-shadow: 1px 2px #666;
 }
 
-button:active{
-    background-color: rgb(30, 180, 190);
-    box-shadow: 1px 2px #666;
-    transform: translateX(-1px);
-    transform: translateY(2px);
+button:active {
+  background-color: rgb(30, 180, 190);
+  box-shadow: 1px 2px #666;
+  transform: translateX(-1px);
+  transform: translateY(2px);
 }
 
 .notif-icon {
   grid-area: notification;
-  background-color: aquamarine;
   background-image: url(./icons/bell-ring-outline.svg);
   background-size: contain;
   background-repeat: no-repeat;
@@ -185,7 +177,7 @@ button:active{
 
 .profile-icon {
   grid-area: user-icon;
-  background-color: yellow;
+  background-color: gold;
   background-image: url(./profile-icons/cat-profile.png);
   background-size: 85%;
   background-position: center;
@@ -201,54 +193,71 @@ button:active{
 .username {
   display: flex;
   grid-area: username;
-  background-color: blueviolet;
   justify-content: center;
   align-items: center;
 }
 
-.user-info>.user{
-    grid-area: username;
-    align-self: center;
+.user-info>.user {
+  grid-area: username;
+  align-self: center;
 }
 
-.small-text{
-    font-size: 0.7rem;
+.small-text {
+  font-size: 0.7rem;
 }
 
-.user-info>.profile-icon{
-    display: flex;
-    grid-area: user-icon;
-    transform: scale(1.5);
-    margin-right: 1.5rem;
+.user-info>.profile-icon {
+  display: flex;
+  grid-area: user-icon;
+  transform: scale(1.5);
+  margin-right: 1.5rem;
 }
 
-.card-container{
-    display: grid;
-    gap: 40px;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(auto-fill, 300px);
-    align-content: center;
-    justify-content: space-evenly;
+.card-container {
+  display: grid;
+  gap: 40px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(330px, 0.4fr));
+  align-content: center;
+  justify-content: space-evenly;
 }
 
-.card{
-    background-color: white;
-    font-weight: 100;
-    height: 200px;
+.card {
+  background-color: var(--card-background-color);
+  color: var(--font-color);
+  font-weight: 100;
+  height: 222px;
+  font-family: "helvetica";
+  border-radius: 8px;
+  padding: 20px;
 }
 
-.right-side-container{
-    font-weight: 100;
-    padding: 30px;
-    background-color: white;
-    width: 90%;
-    margin: auto;
-    border-radius: 12px;
+.right-side-container {
+  background-color: var(--card-background-color);
+  font-weight: 100;
+  font-size: 0.8rem;
+  font-family: "helvetica";
+  padding: 30px;
+  color: var(--font-color);
+  width: 75%;
+  margin: auto;
+  border-radius: 8px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-hr{
-    border: 0;
-    border-top: 1px solid #094CFA;
+.trending {
+  font-size: 0.6rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr;
+  gap: 20px 10px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--main-content-color);
+  margin: 20px 0px;
 }
 
 ol,
@@ -262,7 +271,7 @@ ul {
 
 li,
 a {
-  color: var(--sidebar-color);
+  color: var(--sidebar-font-color);
   text-decoration: none;
   list-style: none;
   position: relative;
@@ -367,4 +376,78 @@ a {
   vertical-align: middle;
   margin-right: calc((var(--icon-margin-left) * -1) / 2);
   margin-left: calc(var(--icon-margin-left) / 2);
+}
+
+div.trending>span:nth-child(1) {
+  content: " ";
+  background-image: url(./profile-icons/cat-profile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-size: 90%;
+  height: 40px;
+  width: 40px;
+  background-color: gold;
+  border-radius: 50%;
+}
+
+div.trending>span:nth-child(3) {
+  content: " ";
+  background-image: url(./profile-icons/cat-profile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-size: 90%;
+  height: 40px;
+  width: 40px;
+  background-color: gold;
+  border-radius: 50%;
+}
+
+div.trending>span:nth-child(5) {
+  content: " ";
+  background-image: url(./profile-icons/superhero-profile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-size: 55%;
+  height: 40px;
+  width: 40px;
+  background-color: #666;
+  border-radius: 50%;
+}
+
+div.trending>span:nth-child(7) {
+  content: " ";
+  background-image: url(./profile-icons/pngwing.com.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-size: 55%;
+  height: 40px;
+  width: 40px;
+  background-color: #666;
+  border-radius: 50%;
+}
+
+.user,
+span.icon:nth-child(1)::before {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto 0px;
+}
+
+.topbar,
+.left-content,
+h3:not(.left-content > h3:first-child) {
+  padding-left: var(--content-margin);
+}
+
+div.right-side-container {
+  margin-bottom: 55px;
+}
+
+b {
+  color: black;
+  font-weight: bold;
 }
